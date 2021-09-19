@@ -21,20 +21,6 @@ jobs:
           labels: |
             enhancement
             automerge
-
-  label:
-    needs: productionPromotion
-
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write      
-
-    steps:
-    - uses: actions/labeler@v2
-      with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        configuration-path: .github/workflows/labeler.yml
         
   analyze:
     needs: productionPromotion
@@ -87,7 +73,6 @@ jobs:
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
       
-    
   stale:
     needs: analyze
 
