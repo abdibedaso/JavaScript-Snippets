@@ -2,7 +2,7 @@ name: Labeler
 on:
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ main, new-snippets ]
+    branches: [ main, new-snippets, main-promotion ]
 
 jobs:
 
