@@ -22,8 +22,8 @@ jobs:
             enhancement
             automerge
 
-
   label:
+    needs: productionPromotion
 
     runs-on: ubuntu-latest
     permissions:
@@ -37,6 +37,8 @@ jobs:
         configuration-path: .github/workflows/labeler.yml
         
   analyze:
+    needs: productionPromotion
+    
     name: Analyze
     runs-on: ubuntu-latest
     permissions:
@@ -87,6 +89,7 @@ jobs:
       
     
   stale:
+    needs: analyze
 
     runs-on: ubuntu-latest
     permissions:
