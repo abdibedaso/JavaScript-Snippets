@@ -18,6 +18,9 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           branch: main-promotion
+          labels: |
+            enhancement
+            automerge
 
 
   label:
